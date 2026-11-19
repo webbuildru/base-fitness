@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Расписание занятий — Base Fitness</title>
+  <meta name="description" content="Групповые тренировки на неделю. Фильтры по дням и направлениям, время, тренеры и длительность занятий.">
+  <meta name="theme-color" content="#161815">
+  <meta property="og:title" content="Расписание занятий — Base Fitness">
+  <meta property="og:description" content="Групповые тренировки на неделю. Фильтры по дням и направлениям, время, тренеры и длительность занятий.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/icon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <script src="site.js" defer></script>
+  <script src="schedule.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">К содержанию</a>
+  <header class="site-header">
+    <div class="wrap masthead">
+      <a class="brand" href="index.html">BASE <span>FITNESS</span></a>
+      <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" hidden>Меню</button>
+      <nav id="site-nav" aria-label="Основная навигация">
+        <a href="workouts.html">Тренировки</a>
+        <a href="schedule.html" aria-current="page">Расписание</a>
+        <a href="memberships.html">Абонементы</a>
+        <a href="contacts.html">Контакты</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" tabindex="-1">
+    <section class="wrap page-content schedule" aria-labelledby="schedule-title">
+      <header class="page-heading"><h1 id="schedule-title">Расписание</h1></header>
+      <form class="schedule-filters" aria-label="Фильтры расписания" hidden>
+        <fieldset class="filter-set day-options">
+          <legend class="visually-hidden">День недели</legend>
+          <label class="filter"><input type="radio" name="day" value="mon" aria-label="Понедельник" checked><span>Пн</span></label>
+          <label class="filter"><input type="radio" name="day" value="tue" aria-label="Вторник"><span>Вт</span></label>
+          <label class="filter"><input type="radio" name="day" value="wed" aria-label="Среда"><span>Ср</span></label>
+          <label class="filter"><input type="radio" name="day" value="thu" aria-label="Четверг"><span>Чт</span></label>
+          <label class="filter"><input type="radio" name="day" value="fri" aria-label="Пятница"><span>Пт</span></label>
+          <label class="filter"><input type="radio" name="day" value="sat" aria-label="Суббота"><span>Сб</span></label>
+          <label class="filter"><input type="radio" name="day" value="sun" aria-label="Воскресенье"><span>Вс</span></label>
+        </fieldset>
+        <fieldset class="filter-set category-options">
+          <legend class="visually-hidden">Направление</legend>
+          <label class="filter"><input type="radio" name="category" value="all" checked><span>Все</span></label>
+          <label class="filter"><input type="radio" name="category" value="strength"><span>Силовые</span></label>
+          <label class="filter"><input type="radio" name="category" value="cardio"><span>Кардио</span></label>
+          <label class="filter"><input type="radio" name="category" value="mobility"><span>Мобильность</span></label>
+        </fieldset>
+      </form>
+      <p class="visually-hidden" role="status" data-schedule-status></p>
+      <div class="schedule-list">
+        <section class="schedule-day" data-day="mon" aria-labelledby="day-mon">
+          <h2 id="day-mon">Понедельник</h2>
+          <ul class="sessions">
+            <li data-category="strength">
+              <time datetime="08:00">08:00</time>
+              <div class="session-name"><h3>Силовая база</h3><p>Алексей Соколов</p></div>
+              <div class="session-details"><p>60 мин</p><p>Начальный уровень</p></div>
+            </li>
+            <li data-category="cardio">
+              <time datetime="12:30">12:30</time>
+              <div class="session-name"><h3>Сайкл</h3><p>Ирина Орлова</p></div>
+              <div class="session-details"><p>45 мин</p><p>Любой уровень</p></div>
+            </li>
+            <li data-category="mobility">
+              <time datetime="18:00">18:00</time>
+              <div class="session-name"><h3>Мобильность</h3><p>Мария Волкова</p></div>
+              <div class="session-details"><p>45 мин</p><p>Любой уровень</p></div>
+            </li>
+            <li data-category="strength">
+              <time datetime="19:30">19:30</time>
+              <div class="session-name"><h3>Функциональная тренировка</h3><p>Даниил Миронов</p></div>
+              <div class="session-details"><p>50 мин</p><p>Средний уровень</p></div>
+            </li>
+          </ul>
+        </section>
+        <section class="schedule-day" data-day="tue" aria-labelledby="day-tue">
+          <h2 id="day-tue">Вторник</h2>
+          <ul class="sessions">
+            <li data-category="mobility">
+              <time datetime="09:00">09:00</time>
+              <div class="session-name"><h3>Мобильность</h3><p>Мария Волкова</p></div>
+              <div class="session-details"><p>45 мин</p><p>Любой уровень</p></div>
+            </li>
+            <li data-category="strength">
+              <time datetime="13:00">13:00</time>
+              <div class="session-name"><h3>Силовая база</h3><p>Алексей Соколов</p></div>
+              <div class="session-details"><p>60 мин</p><p>Начальный уровень</p></div>
+            </li>
+            <li data-category="cardio">
+              <time datetime="19:00">19:00</time>
+              <div class="session-name"><h3>Сайкл</h3><p>Ирина Орлова</p></div>
+              <div class="session-details"><p>45 мин</p><p>Любой уровень</p></div>
+            </li>
+          </ul>
+        </section>
+        <section class="schedule-day" data-day="wed" aria-labelledby="day-wed">
+          <h2 id="day-wed">Среда</h2>
+          <ul class="sessions">
+            <li data-category="cardio">
+              <time datetime="08:00">08:00</time>
+              <div class="session-name"><h3>Сайкл</h3><p>Ирина Орлова</p></div>
+              <div class="session-details"><p>45 мин</p><p>Любой уровень</p></div>
+            </li>
+            <li data-category="mobility">
+              <time datetime="12:00">12:00</time>
+              <div class="session-name"><h3>Мобильность</h3><p>Мария Волкова</p></div>
+              <div class="session-details"><p>45 мин</p><p>Любой уровень</p></div>
+            </li>
+            <li data-category="strength">
+              <time datetime="18:30">18:30</time>
+              <div class="session-name"><h3>Силовая база</h3><p>Алексей Соколов</p></div>
+              <div class="session-details"><p>60 мин</p><p>Начальный уровень</p></div>
+            </li>
+            <li data-category="strength">
+              <time datetime="20:00">20:00</time>
+              <div class="session-name"><h3>Функциональная тренировка</h3><p>Даниил Миронов</p></div>
+              <div class="session-details"><p>50 мин</p><p>Средний уровень</p></div>
+            </li>
+          </ul>
+        </section>
+        <section class="schedule-day" data-day="thu" aria-labelledby="day-thu">
+          <h2 id="day-thu">Четверг</h2>
+          <ul class="sessions">
+            <li data-category="strength">
+              <time datetime="09:00">09:00</time>
+              <div class="session-name"><h3>Силовая база</h3><p>Алексей Соколов</p></div>
+              <div class="session-details"><p>60 мин</p><p>Начальный уровень</p></div>
+            </li>
+            <li data-category="cardio">
+              <time datetime="13:00">13:00</time>
+              <div class="session-name"><h3>Сайкл</h3><p>Ирина Орлова</p></div>
+              <div class="session-details"><p>45 мин</p><p>Любой уровень</p></div>
+            </li>
+            <li data-category="mobility">
+              <time datetime="19:30">19:30</time>
+              <div class="session-name"><h3>Мобильность</h3><p>Мария Волкова</p></div>
+              <div class="session-details"><p>45 мин</p><p>Любой уровень</p></div>
+            </li>
+          </ul>
+        </section>
+        <section class="schedule-day" data-day="fri" aria-labelledby="day-fri">
+          <h2 id="day-fri">Пятница</h2>
+          <ul class="sessions">
+            <li data-category="strength">
+              <time datetime="08:00">08:00</time>
+              <div class="session-name"><h3>Силовая база</h3><p>Алексей Соколов</p></div>
+              <div class="session-details"><p>60 мин</p><p>Начальный уровень</p></div>
+            </li>
+            <li data-category="cardio">
+              <time datetime="12:30">12:30</time>
+              <div class="session-name"><h3>Сайкл</h3><p>Ирина Орлова</p></div>
+              <div class="session-details"><p>45 мин</p><p>Любой уровень</p></div>
+            </li>
+            <li data-category="strength">
+              <time datetime="18:30">18:30</time>
+              <div class="session-name"><h3>Функциональная тренировка</h3><p>Даниил Миронов</p></div>
+              <div class="session-details"><p>50 мин</p><p>Средний уровень</p></div>
+            </li>
+          </ul>
+        </section>
+        <section class="schedule-day" data-day="sat" aria-labelledby="day-sat">
+          <h2 id="day-sat">Суббота</h2>
+          <ul class="sessions">
+            <li data-category="mobility">
+              <time datetime="10:00">10:00</time>
+              <div class="session-name"><h3>Мобильность</h3><p>Мария Волкова</p></div>
+              <div class="session-details"><p>45 мин</p><p>Любой уровень</p></div>
+            </li>
+            <li data-category="cardio">
+              <time datetime="12:00">12:00</time>
+              <div class="session-name"><h3>Сайкл</h3><p>Ирина Орлова</p></div>
+              <div class="session-details"><p>45 мин</p><p>Любой уровень</p></div>
+            </li>
+            <li data-category="strength">
+              <time datetime="15:00">15:00</time>
+              <div class="session-name"><h3>Силовая база</h3><p>Алексей Соколов</p></div>
+              <div class="session-details"><p>60 мин</p><p>Начальный уровень</p></div>
+            </li>
+          </ul>
+        </section>
+        <section class="schedule-day" data-day="sun" aria-labelledby="day-sun">
+          <h2 id="day-sun">Воскресенье</h2>
+          <ul class="sessions">
+            <li data-category="mobility">
+              <time datetime="10:00">10:00</time>
+              <div class="session-name"><h3>Мобильность</h3><p>Мария Волкова</p></div>
+              <div class="session-details"><p>45 мин</p><p>Любой уровень</p></div>
+            </li>
+            <li data-category="strength">
+              <time datetime="12:00">12:00</time>
+              <div class="session-name"><h3>Силовая база</h3><p>Алексей Соколов</p></div>
+              <div class="session-details"><p>60 мин</p><p>Начальный уровень</p></div>
+            </li>
+          </ul>
+        </section>
+      </div>
+      <p class="empty-state" data-empty-schedule hidden>В этот день занятий по выбранному направлению нет. Выбери другой день или направление.</p>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <a class="brand" href="index.html">BASE <span>FITNESS</span></a>
+      <p>Брусничный Берег, проспект Маяка, 18</p>
+      <a href="contacts.html">Как добраться</a>
+
+    </div>
+  </footer>
+</body>
+</html>
